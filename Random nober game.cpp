@@ -5,7 +5,7 @@ using namespace std;
 
 void start()
 {
-	cout << "gjet et tall melom 1 og 100 ";
+	cout << "gjet et tall melom 1 og 100 \n";
 }
 void input(string& stt)
 {
@@ -34,34 +34,37 @@ int main()
 	getRandom(RandomTal);
 
 	//debug tale du skal gjete
-	cout << RandomTal;
+	//cout << RandomTal << "\n";
 	
 	while (Vone == false)
 	{
 		//functions
 		input(playerText);
 
-		//conwert string to int 
-		int tallSkreve = stoi(playerText);
-
+		//conwert string to int
+			int tallSkreve = stoi(playerText);
+	
 		//er støre eler mindre en Randomtal
-		if (tallSkreve <= RandomTal)
+		if (tallSkreve != RandomTal)
 		{
-			cout << "For laft Tall";  
+			if (tallSkreve <= RandomTal)
+			{
+				cout << "For laft Tall\n ";
+			}
+			if (tallSkreve >= RandomTal)
+			{
+				cout << "For Høyt Tall\n ";
+			}
 		}
-		if (tallSkreve >= RandomTal)
-		{
-			cout << "For Høyt Tall";
-		}
-		
 		gangerPrøvd++;
-		cout << gangerPrøvd;
+		
 		if (tallSkreve == RandomTal)
 		{
-			cout << "du Vant";
+			cout << "du Vant!!!\n";
+			cout << "Og prøvde " << gangerPrøvd << " ganger" <<"\n";
+			
 			Vone = true;
 		}
-
 	}
 }
 
